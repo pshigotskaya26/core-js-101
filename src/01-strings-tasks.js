@@ -133,8 +133,10 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const newString = str.replace(value, '');
+  return newString;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -148,8 +150,9 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.slice(1, -1);
+  // throw new Error('Not implemented');
 }
 
 
@@ -163,8 +166,9 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str) {
+  return str.toUpperCase();
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -182,8 +186,9 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -230,8 +235,24 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const inputAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const outputAlpha = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  const arrFromStr = str.split('');
+  let newStr = '';
+
+  for (let i = 0; i < arrFromStr.length; i += 1) {
+    const index = inputAlpha.indexOf(arrFromStr[i]);
+    if (index !== -1) {
+      newStr += outputAlpha[index];
+    } else {
+      newStr += arrFromStr[i];
+    }
+  }
+
+  return newStr;
+
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -247,8 +268,14 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof (value) === 'string' || value instanceof String) {
+    return true;
+  }
+
+  return false;
+
+  // throw new Error('Not implemented');
 }
 
 
