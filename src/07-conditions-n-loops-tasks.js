@@ -98,8 +98,12 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  if ((a + b) > c && (a + c) > b && (b + c) > a) {
+    return true;
+  }
+
+  return false;
 }
 
 
@@ -136,6 +140,45 @@ function isTriangle(/* a, b, c */) {
  *
  */
 function doRectanglesOverlap(/* rect1, rect2 */) {
+  /*
+  if ((rect1.top < rect2.top < (rect1.top + rect1.height))
+  && (rect1.left < rect2.left < (rect1.left + rect1.width))) {
+    return true;
+  }
+  if ((rect1.top < (rect2.top + rect2.height) < (rect1.top + rect1.height))
+  && (rect1.left < rect2.left < (rect1.left + rect1.width))) {
+    return true;
+  }
+
+  if ((rect1.top < (rect2.top + rect2.height) < (rect1.top + rect1.height))
+  && (rect1.left < (rect2.left + rect2.width) < (rect1.left + rect1.width))) {
+    return true;
+  }
+  if ((rect1.top < rect2.top < (rect1.top + rect1.height))
+  && (rect1.left < (rect2.left + rect2.width) < (rect1.left + rect1.width))) {
+    return true;
+  }
+
+  if ((rect2.top < rect1.top < (rect2.top + rect2.height))
+  && (rect2.left < rect1.left < (rect2.left + rect2.width))) {
+    return true;
+  }
+  if ((rect2.top < (rect1.top + rect1.height) < (rect2.top + rect2.height))
+  && (rect2.left < rect1.left < (rect2.left + rect2.width))) {
+    return true;
+  }
+
+  if ((rect2.top < (rect1.top + rect1.height) < (rect2.top + rect2.height))
+  && (rect2.left < (rect1.left + rect1.width) < (rect2.left + rect2.width))) {
+    return true;
+  }
+  if ((rect2.top < rect1.top < (rect2.top + rect2.height))
+  && (rect2.left < (rect1.left + rect1.width) < (rect2.left + rect2.width))) {
+    return true;
+  }
+
+  return false;
+  */
   throw new Error('Not implemented');
 }
 
